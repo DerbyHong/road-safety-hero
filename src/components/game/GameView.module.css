@@ -1,0 +1,192 @@
+.gameViewContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f9fa;
+  position: relative;
+}
+
+.header {
+  padding: 1rem;
+  background-color: #ffffff;
+  border-bottom: 2px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.runButton {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.runButton:disabled {
+  background-color: #94a3b8;
+  cursor: not-allowed;
+}
+
+.resetButton {
+  background-color: transparent;
+  color: #64748b;
+  border: 1px solid #cbd5e1;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 0.5rem;
+}
+
+.switcherBtn {
+  background-color: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #475569;
+}
+
+.activeHero {
+  background-color: #3b82f6;
+  color: white;
+  border-color: #2563eb;
+}
+
+.scene {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background-color: #87ceeb;
+}
+
+.road {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../assets/road_bg.png');
+  background-size: cover;
+  background-position: center bottom;
+  z-index: 1;
+}
+
+.trafficLight {
+    position: absolute;
+    top: 30px;
+    right: 12%;
+    width: 225px;
+    height: auto;
+    z-index: 10;
+}
+
+.trafficLight img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 0 25px rgba(255,255,255,0.4)) drop-shadow(0 8px 16px rgba(0,0,0,0.5));
+}
+
+@keyframes blinker {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.blinkAnim {
+  animation: blinker 0.6s step-end infinite;
+}
+
+.car {
+  position: absolute;
+  right: -300px;
+  bottom: 80px; 
+  width: 250px;
+  z-index: 30;
+}
+
+.car img {
+  width: 100%;
+}
+
+.carCrash {
+  transform: translateX(-1000px);
+  transition: transform 0.4s cubic-bezier(0.1, 0.9, 0.2, 1);
+}
+
+.heroSwitcher {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.character {
+    position: absolute;
+    bottom: 10px;
+    left: 45%;
+    width: 150px;
+    height: auto;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 20;
+    filter: drop-shadow(0 15px 15px rgba(0,0,0,0.4));
+}
+
+.character img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.successModal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #dcfce7;
+  border: 2px solid #22c55e;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  z-index: 50;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.successModal h3 {
+  margin: 0 0 1rem 0;
+  color: #166534;
+  font-size: 1.5rem;
+}
+
+.successModal p {
+  margin: 0;
+  color: #15803d;
+  font-size: 1.1rem;
+}
+
+.failedModal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fee2e2;
+  border: 2px solid #ef4444;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  z-index: 50;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.failedModal h3 {
+  margin: 0 0 1rem 0;
+  color: #991b1b;
+  font-size: 1.5rem;
+}
+
+.failedModal p {
+  margin: 0;
+  color: #7f1d1d;
+  font-size: 1.1rem;
+}

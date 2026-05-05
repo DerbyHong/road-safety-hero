@@ -1,0 +1,62 @@
+.editorContainer {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  font-family: inherit;
+}
+
+.toolbox {
+  width: 250px;
+  background-color: #f1f5f9;
+  border-right: 2px solid #e2e8f0;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.workspace {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 1rem;
+  overflow-y: auto;
+  min-height: 100%;
+}
+
+.sectionTitle {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #475569;
+  margin-bottom: 0.8rem;
+  margin-top: 1.2rem;
+}
+
+.sectionTitle:first-child {
+  margin-top: 0;
+}
+
+.blockItem {
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  cursor: grab;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+
+.blockItem:active {
+  cursor: grabbing;
+}
+
+.dropMessage {
+  border: 2px dashed #cbd5e1;
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  color: #94a3b8;
+  font-weight: bold;
+  margin-top: 1rem;
+}
